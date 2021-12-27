@@ -1,7 +1,9 @@
 package com.leejh.service.Impl;
 
 import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.metadata.Head;
 import com.alibaba.excel.util.StyleUtil;
+import com.alibaba.excel.write.merge.AbstractMergeStrategy;
 import com.alibaba.excel.write.metadata.style.WriteCellStyle;
 import com.alibaba.excel.write.metadata.style.WriteFont;
 import com.alibaba.excel.write.style.HorizontalCellStyleStrategy;
@@ -9,12 +11,14 @@ import com.alibaba.excel.write.style.row.AbstractRowHeightStyleStrategy;
 import com.leejh.entity.ImportExcelDto;
 import com.leejh.service.DownloadService;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class DownloadServiceImpl implements DownloadService {
@@ -73,5 +77,6 @@ public class DownloadServiceImpl implements DownloadService {
         @Override
         protected void setContentColumnHeight(Row row, int i) {}
     }
+
 
 }

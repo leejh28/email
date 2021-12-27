@@ -23,6 +23,7 @@ public class StudentController {
     studentRepository.save(student);
   }
 
+
   @GetMapping("/hello")
   public void hello(){
     String s = UUID.randomUUID().toString().replace("-", "");
